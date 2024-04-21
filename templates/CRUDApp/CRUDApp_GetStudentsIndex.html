@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<body>
+    <h1>Students:</h1>
+    <table border="2">
+    <thead>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>TestScore</th>
+    </thead>
+    {% for student in students %}
+    <tr>
+        <td>{{student.id}}</td>
+        <!-- id should be small "id" here to fetch and display the data as it is inbuild -->
+        <td>{{student.FirstName}}</td>
+        <td>{{student.LastName}}</td>
+        <td>{{student.TestScore}}</td>
+
+        <!-- adding for the deteting the value based on the id -->
+        <!-- new syntax -->
+        <td><a href="/CRUDApp_DeleteStudent/{{student.id}}"> Delete </a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <br>
+    <a href="/CRUDApp_CreateStudent"> Add Student</a>
+    </body>
+</html>
